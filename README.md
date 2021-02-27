@@ -4,8 +4,9 @@
  <img src="https://img.shields.io/badge/build-passing-brightgreen" /></a>
   <img src="https://img.shields.io/badge/Code%20Language-Java-9cf" /></a>
   <img src="https://img.shields.io/badge/Version-vF-blue" /></a>
- ##TicTacToe
- ---
+---
+## TicTacToe
+
 Personal project, simple Java TicTacToe program.
 Created June 2018.
 
