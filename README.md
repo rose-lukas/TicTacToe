@@ -1,5 +1,5 @@
    <p align="center">
-  <img src="https://img1.pnghut.com/8/17/14/M20LL21V8D/tictactoe-chessboard-shooter-computer-network-drink.jpg" /></a>
+  <img src="https://images-na.ssl-images-amazon.com/images/I/411RqsooQ3L.png" /></a>
  
  <img src="https://img.shields.io/badge/build-passing-brightgreen" /></a>
   <img src="https://img.shields.io/badge/Code%20Language-Java-9cf" /></a>
