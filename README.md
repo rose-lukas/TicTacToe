@@ -1,2 +1,2 @@
 # TicTacToe
-Personal project coding simple Java TicTacToe program.
+Personal project, simple Java TicTacToe program.
