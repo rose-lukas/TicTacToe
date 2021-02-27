@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
-
 public class Game {
 
 	public static void main(String[] args) {
@@ -24,10 +22,23 @@ public class Game {
 		
 		while(end == false) {
 			turn(visualBoard, valueBoard, turnCounter);
+			
+			if (checkWin(valueBoard) == 1) {
+				System.out.println("Game Over\nPlayer X won the Game.");
+				end = true;
+				break;
+			}
+			else if (checkWin(valueBoard) == 2) {
+				System.out.println("Game Over\nPlayer O won the Game.");
+				end = true;
+				break;
+			}
+			
+			if(turnCounter == 9) {
+				System.out.println("Game Over\nThe Game has ended in a Draw.");
+				break;
+			}
 			turnCounter++;
-			
-			if (checkWin(valueBoard) == true) end = true;
-			
 		}
 	}
 	
@@ -40,10 +51,36 @@ public class Game {
 		}
 	}
 	
-	public static boolean checkWin(int[][] valueBoard) {
+	public static int checkWin(int[][] valueBoard) {
+		int n = 3; //board cube size
 		
-		
-		return false;
+		for(int player = 1; player <= 2; player++) {
+			for(int x = 0; x < n; x++) {
+				
+				for(int i = 0; i < n; i++) {//check for horizontal line win
+					if(valueBoard[x][i] != player) break;
+					if(i == n-1)return player;
+				}
+				
+				for(int i = 0; i < n; i++) {//check for vertical line win
+					if(valueBoard[i][x] != player) break;
+					if(i == n-1)return player;
+				}
+				
+				for(int i = 0; i < n; i++) {//check for diagonal line win
+					if(valueBoard[i][i] != player) break;
+					if(i == n-1)return player;
+				}
+				
+				for(int i = 0; i < n; i++) {//check for anti-diagonal line win
+					if(valueBoard[i][(n-1)-i] != player) break;
+					if(i == n-1)return player;
+				}
+				
+			}
+		}
+			
+		return 0;
 	}
 	
 	public static void turn(String[][] visualBoard, int[][] valueBoard, int turn) {
@@ -77,14 +114,12 @@ public class Game {
 			}	
 			else System.out.println("Error: Out of Bounds Space.");
 		}
-		
 		valueBoard[row-1][column-1] = value;
 		visualBoard[(row-1)*2][(column-1)*2] = " "+player+" ";
 		printBoard(visualBoard);
 		
 		
 		System.out.println("An "+player+" got placed at ("+row+","+column+")");
-		
 	}
 
 }
