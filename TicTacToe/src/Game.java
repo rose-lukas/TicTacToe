@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class Game {
+	
+	/*
+	Created by Lukas Rose 06/2018
+	*/
 
 	public static void main(String[] args) {
 		
